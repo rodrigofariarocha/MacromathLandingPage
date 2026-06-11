@@ -123,8 +123,6 @@ Gera um site **100% estático** em `./dist`, pronto para **Vercel**, **Netlify**
 
 <br />
 
-<sub>Feito com 🧡 e <strong>Astro</strong></sub>
-
 </div>
 
 <!-- Animated footer wave -->
