@@ -6,8 +6,8 @@
 
 <br />
 
-<!-- Animated logo + wordmark (self-contained SVG, gentle pulse) -->
-<img src=".github/assets/macromath-logo.svg" alt="MacroMath" width="420" />
+<!-- Animated logo + wordmark below it (self-contained SVG, gentle pulse) -->
+<img src=".github/assets/macromath-logo.svg" alt="MacroMath" width="300" />
 
 <br /><br />
 
