@@ -1,0 +1,107 @@
+---
+import StatusBar from './StatusBar.astro';
+
+const bullets = ['ai.b1', 'ai.b2', 'ai.b3'];
+---
+
+<section class="section ai" id="ai">
+  <div class="ai-tint" aria-hidden="true"></div>
+  <div class="container ai-grid">
+    <div class="ai-copy">
+      <span class="eyebrow reveal" data-i18n="ai.eyebrow">Inteligência artificial</span>
+      <h2 class="title reveal d1" data-i18n="ai.title">O teu nutricionista de bolso</h2>
+      <p class="lead reveal d2" data-i18n="ai.sub">
+        A MacroAI conhece a tua despensa, os teus objetivos e o teu histórico.
+      </p>
+
+      <ul class="ai-list">
+        {bullets.map((b, i) => (
+          <li class={`reveal d${i + 2}`}>
+            <span class="ai-check">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+            </span>
+            <span data-i18n={b}></span>
+          </li>
+        ))}
+      </ul>
+
+      <a href="#download" class="btn btn-primary reveal d5" data-i18n="hero.cta1">Descarregar grátis</a>
+    </div>
+
+    <div class="ai-visual reveal-r">
+      <div class="phone-glow"></div>
+      <div class="phone">
+        <div class="phone-screen">
+          <img src="/images/app-ai.jpg" alt="MacroAI — assistente nutricional" loading="lazy" />
+          <StatusBar />
+        </div>
+      </div>
+      <div class="float-chip">
+        <span class="spark">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 5L19 8.8 14 11l-2 5-2-5L5 8.8 10.2 7z" /></svg>
+        </span>
+        MacroAI
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ai { position: relative; overflow: hidden; }
+  .ai-tint {
+    position: absolute; inset: 0; z-index: -1;
+    background: var(--bg-tint);
+    opacity: 0.7;
+  }
+  .ai-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: clamp(2rem, 6vw, 5rem);
+  }
+  .ai-copy .title { margin-bottom: var(--sp-md); }
+  .ai-list { display: flex; flex-direction: column; gap: 0.9rem; margin: var(--sp-xl) 0; }
+  .ai-list li { display: flex; align-items: center; gap: 0.8rem; font-size: var(--fs-base); font-weight: 600; }
+  .ai-check {
+    flex-shrink: 0;
+    width: 26px; height: 26px;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    background: var(--brand-gradient);
+    color: #fff;
+  }
+
+  .ai-visual { position: relative; display: flex; justify-content: center; }
+  .ai-visual .phone { animation: float 6.5s ease-in-out infinite; }
+  .ai-visual .phone-glow {
+    position: absolute; top: 50%; left: 50%; width: 360px; height: 360px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, var(--glow), transparent 68%); filter: blur(34px);
+  }
+  .float-chip {
+    position: absolute;
+    top: 12%;
+    right: 2%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    border-radius: var(--r-full);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    font-weight: 800;
+    font-size: var(--fs-sm);
+    animation: float 5s ease-in-out infinite 0.6s;
+  }
+  .spark {
+    width: 24px; height: 24px; display: grid; place-items: center; border-radius: 8px;
+    background: var(--brand-gradient); color: #fff;
+  }
+
+  @media (max-width: 900px) {
+    .ai-grid { grid-template-columns: 1fr; }
+    .ai-visual { order: -1; }
+    .float-chip { right: 8%; }
+  }
+</style>

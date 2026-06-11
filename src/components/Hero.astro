@@ -1,0 +1,144 @@
+---
+import StatusBar from './StatusBar.astro';
+---
+
+<section class="hero" id="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="hero-badge reveal">
+        <span class="dot"></span>
+        <span data-i18n="hero.badge">Disponível para iOS &amp; Android</span>
+      </div>
+
+      <h1 class="hero-title reveal d1">
+        <span data-i18n="hero.title1">A tua nutrição,</span><br />
+        <span class="text-gradient" data-i18n="hero.title2">finalmente sem esforço.</span>
+      </h1>
+
+      <p class="hero-sub reveal d2" data-i18n="hero.sub">
+        Conta macros, planeia refeições, gere a despensa e deixa a inteligência artificial
+        tratar do resto. Tudo numa app simples, rápida e bonita.
+      </p>
+
+      <div class="hero-actions reveal d3">
+        <a href="#download" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          <span data-i18n="hero.cta1">Descarregar grátis</span>
+        </a>
+        <a href="#how" class="btn btn-ghost">
+          <span data-i18n="hero.cta2">Ver como funciona</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+        </a>
+      </div>
+
+      <div class="hero-stats reveal d4">
+        <div class="hstat">
+          <span class="hstat-v" data-i18n="hero.stat1">Gestão de macros</span>
+          <span class="hstat-l" data-i18n="hero.stat1l">em tempo real</span>
+        </div>
+        <span class="hstat-sep"></span>
+        <div class="hstat">
+          <span class="hstat-v" data-i18n="hero.stat2">Assistente IA</span>
+          <span class="hstat-l" data-i18n="hero.stat2l">sempre contigo</span>
+        </div>
+        <span class="hstat-sep"></span>
+        <div class="hstat">
+          <span class="hstat-v" data-i18n="hero.stat3">Grátis</span>
+          <span class="hstat-l" data-i18n="hero.stat3l">para começar</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal-s d2">
+      <div class="phone-glow"></div>
+      <div class="phone hero-phone">
+        <div class="phone-screen">
+          <img src="/images/app-home.jpg" alt="MacroMath — ecrã principal" loading="eager" />
+          <StatusBar />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    padding: clamp(7rem, 14vh, 11rem) 0 var(--sp-4xl);
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+  .hero-copy { max-width: 560px; }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: var(--r-full);
+    background: var(--brand-gradient-soft);
+    border: 1px solid rgba(255, 90, 31, 0.2);
+    color: var(--brand-strong);
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin-bottom: var(--sp-lg);
+  }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--brand); animation: pulse-dot 2.2s ease-in-out infinite; }
+
+  .hero-title {
+    font-size: var(--fs-5xl);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    margin-bottom: var(--sp-lg);
+  }
+  .hero-sub {
+    font-size: var(--fs-lg);
+    color: var(--text-2);
+    line-height: 1.7;
+    margin-bottom: var(--sp-xl);
+    max-width: 480px;
+  }
+  .hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-bottom: var(--sp-2xl); }
+
+  .hero-stats { display: flex; align-items: center; gap: clamp(1rem, 3vw, 2rem); }
+  .hstat { display: flex; flex-direction: column; }
+  .hstat-v { font-weight: 800; font-size: var(--fs-base); letter-spacing: -0.01em; }
+  .hstat-l { font-size: var(--fs-xs); color: var(--text-3); }
+  .hstat-sep { width: 1px; height: 34px; background: var(--border-strong); }
+
+  /* Visual */
+  .hero-visual { position: relative; display: flex; justify-content: center; }
+  .phone-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 440px;
+    height: 440px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(255, 90, 31, 0.16), transparent 64%);
+    filter: blur(36px);
+  }
+  .hero-phone { animation: float 6s ease-in-out infinite; }
+
+  @media (max-width: 960px) {
+    .hero-grid { grid-template-columns: 1fr; text-align: center; }
+    .hero-copy { max-width: 100%; }
+    .hero-sub { margin-left: auto; margin-right: auto; }
+    .hero-actions, .hero-stats { justify-content: center; }
+    .hero-visual { order: -1; }
+  }
+  @media (max-width: 460px) {
+    .hero-actions .btn { width: 100%; }
+    .hero-stats { gap: 0.8rem; }
+    .hstat-v { font-size: var(--fs-sm); }
+  }
+</style>

@@ -1,0 +1,96 @@
+---
+import StatusBar from './StatusBar.astro';
+
+const steps = [
+  { n: '01', t: 'how.1.t', d: 'how.1.d' },
+  { n: '02', t: 'how.2.t', d: 'how.2.d' },
+  { n: '03', t: 'how.3.t', d: 'how.3.d' },
+];
+---
+
+<section class="section how" id="how">
+  <div class="container how-grid">
+    <div class="how-visual reveal-l">
+      <div class="phone-glow"></div>
+      <div class="phone">
+        <div class="phone-screen">
+          <img src="/images/app-onboarding.jpg" alt="MacroMath — recomendação diária" loading="lazy" />
+          <StatusBar />
+        </div>
+      </div>
+    </div>
+
+    <div class="how-copy">
+      <span class="eyebrow reveal" data-i18n="how.eyebrow">Como funciona</span>
+      <h2 class="title reveal d1" data-i18n="how.title">Do objetivo ao prato em 3 passos</h2>
+
+      <div class="steps">
+        {steps.map((s, i) => (
+          <div class={`step reveal d${i + 1}`}>
+            <span class="step-n">{s.n}</span>
+            <div>
+              <h3 class="step-t" data-i18n={s.t}></h3>
+              <p class="step-d" data-i18n={s.d}></p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .how-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: center;
+    gap: clamp(2rem, 6vw, 5rem);
+  }
+  .how-visual { position: relative; display: flex; justify-content: center; }
+  .how-visual .phone { animation: float 7s ease-in-out infinite; }
+  .how-visual .phone-glow {
+    position: absolute; top: 50%; left: 50%; width: 340px; height: 340px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, var(--glow), transparent 68%); filter: blur(30px);
+  }
+
+  .how-copy .title { margin-bottom: var(--sp-xl); }
+  .steps { display: flex; flex-direction: column; gap: 1.6rem; }
+  .step {
+    position: relative;
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+  }
+  /* connector line linking the step badges */
+  .step:not(:last-child) .step-n::after {
+    content: '';
+    position: absolute;
+    top: 48px;
+    left: 23px;
+    width: 1.5px;
+    height: calc(100% + 1.6rem - 48px);
+    background: var(--border-strong);
+  }
+  .step-n {
+    position: relative;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+    font-weight: 800;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    color: var(--text);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+  }
+  .step-t { font-size: var(--fs-lg); font-weight: 700; margin-bottom: 0.3rem; letter-spacing: -0.01em; }
+  .step-d { font-size: var(--fs-sm); color: var(--text-2); line-height: 1.65; }
+
+  @media (max-width: 900px) {
+    .how-grid { grid-template-columns: 1fr; }
+    .how-visual { order: -1; }
+  }
+</style>
