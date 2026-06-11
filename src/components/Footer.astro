@@ -1,0 +1,112 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/#hero" class="brand">
+          <img src="/images/logo-mark.png" alt="MacroMath" class="brand-logo" />
+        </a>
+        <p class="footer-tag" data-i18n="foot.tagline">Gestão nutricional inteligente, para todos.</p>
+
+        <div class="footer-social">
+          <a href="https://instagram.com/macromath.app" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://x.com/macromath_app" target="_blank" rel="noopener" aria-label="X">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 2H21l-6.6 7.5L22 22h-6.8l-4.7-6.1L4.9 22H2l7-8L2 2h6.9l4.3 5.7zM16 20h1.6L8 4H6.3z"/></svg>
+          </a>
+          <a href="https://tiktok.com/@macromath.app" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.4 2.3 1.7 3.7 4 4v3c-1.4 0-2.8-.4-4-1.1v6.3a6 6 0 1 1-6-6c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.8V3z"/></svg>
+          </a>
+          <a href="https://github.com/macromath" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.4-2.2-.300000000000001-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer-cols">
+        <div class="footer-col">
+          <h4 data-i18n="foot.product">Produto</h4>
+          <a href="/#features" data-i18n="nav.features">Funcionalidades</a>
+          <a href="/#ai" data-i18n="nav.ai">MacroAI</a>
+          <a href="/#pricing" data-i18n="nav.pricing">Preços</a>
+          <a href="/#faq" data-i18n="nav.faq">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="foot.support">Apoio ao cliente</h4>
+          <a href="mailto:support@macromath.net">support@macromath.net</a>
+          <a href="https://instagram.com/macromath.app" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://github.com/macromath" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="foot.legal">Legal</h4>
+          <a href="/privacidade" data-i18n="foot.privacy">Privacidade</a>
+          <a href="/termos" data-i18n="foot.terms">Termos</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© {year} MacroMath. <span data-i18n="foot.rights">Todos os direitos reservados.</span></span>
+      <span data-i18n="foot.made">Feito com cuidado para uma vida mais saudável.</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--border);
+    background: var(--bg-alt);
+    padding: var(--sp-3xl) 0 var(--sp-xl);
+    position: relative;
+    z-index: 1;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.3fr 2fr;
+    gap: var(--sp-2xl);
+    padding-bottom: var(--sp-2xl);
+    border-bottom: 1px solid var(--border);
+  }
+  .footer .brand { display: inline-flex; align-items: center; }
+  .footer .brand-logo { width: 40px; height: 44px; object-fit: contain; }
+  .footer-tag { color: var(--text-2); font-size: var(--fs-sm); margin-top: 0.8rem; max-width: 300px; }
+
+  .footer-social { display: flex; gap: 0.6rem; margin-top: 1.2rem; }
+  .footer-social a {
+    width: 40px; height: 40px;
+    display: grid; place-items: center;
+    border-radius: var(--r-full);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-2);
+    transition: transform var(--t-fast), background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+  }
+  .footer-social a:hover { transform: translateY(-3px); background: var(--brand-gradient); color: #fff; border-color: transparent; }
+
+  .footer-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-lg); }
+  .footer-col { display: flex; flex-direction: column; gap: 0.65rem; }
+  .footer-col h4 { font-size: var(--fs-sm); font-weight: 700; margin-bottom: 0.3rem; }
+  .footer-col a { font-size: var(--fs-sm); color: var(--text-2); transition: color var(--t-fast); }
+  .footer-col a:hover { color: var(--brand-strong); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    padding-top: var(--sp-xl);
+    font-size: var(--fs-xs);
+    color: var(--text-3);
+  }
+
+  @media (max-width: 720px) {
+    .footer-top { grid-template-columns: 1fr; gap: var(--sp-xl); }
+  }
+  @media (max-width: 460px) {
+    .footer-cols { grid-template-columns: 1fr 1fr; }
+  }
+</style>

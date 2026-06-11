@@ -1,0 +1,58 @@
+---
+interface Props {
+  titleKey: string;
+  bodyKey: string;
+}
+const { titleKey, bodyKey } = Astro.props;
+---
+
+<main class="legal">
+  <div class="container legal-wrap">
+    <a href="/" class="legal-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6" /></svg>
+      <span data-i18n="legal.back">Voltar ao início</span>
+    </a>
+    <h1 class="legal-title" data-i18n={titleKey}></h1>
+    <p class="legal-updated" data-i18n="legal.updated">Última atualização: junho de 2026</p>
+    <div class="legal-body" data-i18n-html={bodyKey}></div>
+  </div>
+</main>
+
+<style>
+  .legal { padding: clamp(7rem, 14vh, 9rem) 0 var(--sp-4xl); position: relative; z-index: 1; }
+  .legal-wrap { max-width: 760px; }
+  .legal-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--brand-strong);
+    margin-bottom: var(--sp-lg);
+  }
+  .legal-back:hover { text-decoration: underline; }
+  .legal-title { font-size: var(--fs-4xl); font-weight: 800; letter-spacing: -0.03em; }
+  .legal-updated { color: var(--text-3); font-size: var(--fs-sm); margin-top: 0.5rem; margin-bottom: var(--sp-2xl); }
+
+  .legal-body :global(h2) {
+    position: relative;
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: var(--sp-xl) 0 0.6rem;
+    padding-left: 0.9rem;
+  }
+  .legal-body :global(h2)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.15em;
+    bottom: 0.15em;
+    width: 4px;
+    border-radius: var(--r-full);
+    background: var(--brand-gradient);
+  }
+  .legal-body :global(p) { color: var(--text-2); line-height: 1.8; margin-bottom: 0.8rem; }
+  .legal-body :global(a) { color: var(--brand-strong); font-weight: 600; }
+  .legal-body :global(a:hover) { text-decoration: underline; }
+</style>

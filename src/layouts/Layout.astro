@@ -1,0 +1,212 @@
+---
+import { dict } from '../i18n/dict.js';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'MacroMath — Gestão nutricional inteligente com IA',
+  description = 'Conta calorias e macros, planeia refeições, gere a despensa e deixa a IA tratar do resto. A app de nutrição simples, rápida e bonita para iOS e Android.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#FF5A1F" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/images/app-home.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>{title}</title>
+
+    <!-- Apply saved theme + language before paint (no flash) -->
+    <script is:inline>
+      (function () {
+        document.documentElement.classList.add('js');
+        try {
+          var qs = new URLSearchParams(location.search);
+          var t = qs.get('theme') || localStorage.getItem('mm-theme');
+          if (!t) t = 'light';
+          document.documentElement.setAttribute('data-theme', t);
+
+          var l = qs.get('lang') || localStorage.getItem('mm-lang');
+          if (!l) {
+            var nav = (navigator.language || 'pt').slice(0, 2).toLowerCase();
+            l = ['pt', 'en', 'es'].indexOf(nav) >= 0 ? nav : 'pt';
+          }
+          document.documentElement.setAttribute('lang', l);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="bg-decor" aria-hidden="true">
+      <span class="bg-grid"></span>
+      <span class="orb orb-1"></span>
+    </div>
+
+    <slot />
+
+    <script is:inline define:vars={{ dict }}>
+      // ---------- i18n ----------
+      const LANGS = ['pt', 'en', 'es'];
+      function currentLang() {
+        const l = document.documentElement.getAttribute('lang') || 'pt';
+        return LANGS.indexOf(l) >= 0 ? l : 'pt';
+      }
+      function applyLang(lang) {
+        document.documentElement.setAttribute('lang', lang);
+        try { localStorage.setItem('mm-lang', lang); } catch (e) {}
+        document.querySelectorAll('[data-i18n]').forEach((el) => {
+          const entry = dict[el.getAttribute('data-i18n')];
+          if (entry && entry[lang]) el.textContent = entry[lang];
+        });
+        document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+          const entry = dict[el.getAttribute('data-i18n-html')];
+          if (entry && entry[lang]) el.innerHTML = entry[lang];
+        });
+        document.querySelectorAll('[data-lang-label]').forEach((el) => {
+          el.textContent = lang.toUpperCase();
+        });
+        document.querySelectorAll('[data-lang-opt]').forEach((el) => {
+          el.classList.toggle('active', el.getAttribute('data-lang-opt') === lang);
+        });
+      }
+      applyLang(currentLang());
+
+      document.querySelectorAll('[data-lang-opt]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          applyLang(btn.getAttribute('data-lang-opt'));
+          document.querySelector('.lang-switch')?.classList.remove('open');
+        });
+      });
+      const langSwitch = document.querySelector('.lang-switch');
+      langSwitch?.querySelector('.lang-trigger')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langSwitch.classList.toggle('open');
+      });
+      document.addEventListener('click', () => langSwitch?.classList.remove('open'));
+
+      // ---------- Theme ----------
+      function setTheme(t) {
+        document.documentElement.setAttribute('data-theme', t);
+        try { localStorage.setItem('mm-theme', t); } catch (e) {}
+      }
+      document.querySelectorAll('[data-theme-toggle]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          setTheme(next);
+        });
+      });
+
+      // ---------- Scroll reveal (re-triggers scrolling both up and down) ----------
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            entry.target.classList.toggle('in', entry.isIntersecting);
+          });
+        },
+        { threshold: 0, rootMargin: '0px 0px -12% 0px' }
+      );
+      document.querySelectorAll('.reveal, .reveal-l, .reveal-r, .reveal-s').forEach((el) => io.observe(el));
+
+      // ---------- Navbar scroll state ----------
+      const nav = document.getElementById('nav');
+      const onScroll = () => nav && nav.classList.toggle('scrolled', window.scrollY > 16);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // ---------- Mobile menu ----------
+      const burger = document.getElementById('burger');
+      const menu = document.getElementById('mobile-menu');
+      burger?.addEventListener('click', () => {
+        burger.classList.toggle('open');
+        menu?.classList.toggle('open');
+        document.body.classList.toggle('no-scroll');
+      });
+      menu?.querySelectorAll('a').forEach((a) =>
+        a.addEventListener('click', () => {
+          burger?.classList.remove('open');
+          menu.classList.remove('open');
+          document.body.classList.remove('no-scroll');
+        })
+      );
+
+      // ---------- FAQ accordion ----------
+      document.querySelectorAll('.faq-item').forEach((item) => {
+        item.querySelector('.faq-q')?.addEventListener('click', () => {
+          const open = item.classList.contains('open');
+          document.querySelectorAll('.faq-item').forEach((i) => i.classList.remove('open'));
+          if (!open) item.classList.add('open');
+        });
+      });
+
+      // ---------- Animated macro rings (hero) ----------
+      const ringIO = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.style.strokeDashoffset = e.target.dataset.offset || '0';
+            ringIO.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.4 });
+      document.querySelectorAll('[data-ring]').forEach((r) => ringIO.observe(r));
+    </script>
+
+    <style is:global>
+      @import '../styles/global.css';
+
+      body.no-scroll { overflow: hidden; }
+
+      .bg-decor {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      /* Subtle dotted texture that fades out top + bottom */
+      .bg-grid {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(var(--grid-line) 1.2px, transparent 1.2px);
+        background-size: 30px 30px;
+        mask-image: linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
+        -webkit-mask-image: linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
+        opacity: 0.7;
+      }
+      /* one faint orange glow — the only colour on the canvas */
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(140px);
+        opacity: 0.5;
+      }
+      .orb-1 {
+        top: -240px;
+        right: -160px;
+        width: 560px;
+        height: 560px;
+        background: radial-gradient(circle, var(--glow), transparent 70%);
+      }
+    </style>
+  </body>
+</html>
