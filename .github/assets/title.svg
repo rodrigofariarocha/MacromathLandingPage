@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 110" width="540" height="110" fill="none" role="img" aria-label="MacroMath">
+  <defs>
+    <linearGradient id="mm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF8A3D"/>
+      <stop offset="1" stop-color="#FF4D17"/>
+    </linearGradient>
+  </defs>
+  <text x="270" y="78" text-anchor="middle" font-family="Poppins, 'Segoe UI', Arial, sans-serif" font-size="74" font-weight="800" letter-spacing="-3" fill="url(#mm)" opacity="0">
+    MacroMath
+    <animate attributeName="opacity" from="0" to="1" dur="0.9s" begin="0s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.16 1 0.3 1"/>
+  </text>
+</svg>
