@@ -4,127 +4,128 @@
 
 <div align="center">
 
-<!-- Animated wave header (SVG, renders on GitHub) -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF8A3D,100:FF4D17&height=190&text=MacroMath&fontColor=ffffff&fontSize=58&fontAlignY=40&animation=fadeIn&desc=Gest%C3%A3o%20nutricional%20inteligente%20com%20IA&descSize=16&descAlignY=62" alt="MacroMath" width="100%" />
+<br />
 
-<!-- Animated typing text, rendered in Poppins -->
-<a href="https://github.com/rodrigofariarocha/MacromathLandingPage">
-  <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=22&pause=700&duration=3200&color=FF5A1F&center=true&vCenter=true&width=640&height=55&lines=Conta+calorias+e+macros+em+segundos;Planeia+refei%C3%A7%C3%B5es+com+intelig%C3%AAncia+artificial;Gere+a+despensa+sem+esfor%C3%A7o;Simples%2C+r%C3%A1pida+e+bonita+%F0%9F%8D%8A" alt="Typing tagline" />
-</a>
+<!-- Logo -->
+<img src="public/images/logo-mark.png" alt="MacroMath" width="96" />
+
+<br /><br />
+
+<!-- Animated wordmark, typed in Poppins -->
+<img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=800&size=42&duration=1600&pause=2500&color=FF5A1F&center=true&vCenter=true&repeat=false&width=480&height=70&lines=MacroMath" alt="MacroMath" />
+
+<!-- Animated rotating taglines, in Poppins -->
+<br />
+<img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=500&size=17&duration=2800&pause=900&color=9AA0A6&center=true&vCenter=true&width=560&height=36&lines=Conta+calorias+e+macros+%F0%9F%8D%8E;Planeia+refei%C3%A7%C3%B5es+com+IA+%F0%9F%A4%96;Gere+a+despensa+sem+esfor%C3%A7o+%F0%9F%9B%92;Dispon%C3%ADvel+para+iOS+%26+Android+%F0%9F%93%B1" alt="Taglines" />
+
+<br /><br />
+
+<!-- Minimal badges -->
+<a href="https://astro.build"><img src="https://img.shields.io/badge/Astro-FF5A1F?style=flat-square&logo=astro&logoColor=white" alt="Astro" /></a>
+&nbsp;
+<img src="https://img.shields.io/badge/Poppins-111111?style=flat-square&logo=googlefonts&logoColor=white" alt="Poppins" />
+&nbsp;
+<img src="https://img.shields.io/badge/PT_·_EN_·_ES-FF8A3D?style=flat-square" alt="i18n" />
+&nbsp;
+<img src="https://img.shields.io/badge/Light_·_Dark-111111?style=flat-square" alt="Theme" />
 
 <br />
 
-<!-- Badges -->
-<p>
-  <img src="https://img.shields.io/badge/Astro-6.x-FF5A1F?style=for-the-badge&logo=astro&logoColor=white" alt="Astro" />
-  <img src="https://img.shields.io/badge/Node-%E2%89%A522.12-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node" />
-  <img src="https://img.shields.io/badge/i18n-PT%20·%20EN%20·%20ES-111?style=for-the-badge" alt="i18n" />
-  <img src="https://img.shields.io/badge/Theme-Light%20%2F%20Dark-FF8A3D?style=for-the-badge" alt="Theme" />
-</p>
+</div>
+
+<!-- Animated wave divider -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF8A3D,100:FF4D17&height=70&section=header" width="100%" />
+
+<div align="center">
+
+### Gestão nutricional inteligente com IA
+
+Site institucional da app **MacroMath** — conta calorias e macros, planeia refeições,
+gere a despensa e deixa a inteligência artificial tratar do resto.
+Rápida, bonita e acessível.
 
 </div>
 
-<!-- gradient divider -->
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF8A3D,100:FF4D17&height=3" width="100%" />
+<br />
 
-## ✨ Sobre
+## 🚀 &nbsp;Destaques
 
-Site institucional da app **MacroMath** — a app de nutrição que conta calorias e macros, planeia refeições, gere a despensa e deixa a inteligência artificial tratar do resto. Esta landing page foi construída para ser **rápida, bonita e acessível**, com um _design system_ próprio inspirado na própria app.
+> ⚡ &nbsp;**Estático & veloz** — gerado com [Astro](https://astro.build), HTML puro, sem JS desnecessário
+> 🌗 &nbsp;**Tema claro / escuro** — alternável e persistente, sem _flash_ ao carregar
+> 🌍 &nbsp;**Multilíngue** — Português · English · Español, i18n no cliente
+> 📱 &nbsp;**Responsivo** — desenhado _mobile-first_, com navegação e CTA dedicados
+> 🎨 &nbsp;**Design system** — paleta laranja da marca, tipografia **Poppins** e tokens em CSS
 
-## 🚀 Destaques
+<br />
 
-| | |
-| :-- | :-- |
-| ⚡ **Estático & veloz** | Gerado com [Astro](https://astro.build) — HTML puro, sem JavaScript desnecessário. |
-| 🌗 **Tema claro / escuro** | Alternável e persistente, sem _flash_ ao carregar a página. |
-| 🌍 **Multilíngue** | Português · English · Español, via i18n aplicado no cliente. |
-| 📱 **Responsivo** | Desenhado _mobile-first_, com navegação e CTA dedicados ao telemóvel. |
-| 🎨 **Design system** | Paleta laranja da marca, tipografia **Poppins** e tokens em CSS. |
+## 🧱 &nbsp;Stack
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF8A3D,100:FF4D17&height=3" width="100%" />
+<div align="center">
 
-## 🧱 Stack
+<img src="https://skillicons.dev/icons?i=astro,html,css,js,vercel" alt="Stack" />
 
-<p>
-  <img src="https://skillicons.dev/icons?i=astro,html,css,js,vercel" alt="Stack" />
-</p>
+</div>
 
-| Camada      | Tecnologia                          |
-| :---------- | :---------------------------------- |
-| Framework   | Astro 6 _(output estático)_         |
-| Estilos     | CSS puro + _design tokens_          |
-| i18n        | Dicionário JS aplicado no cliente   |
-| Tipografia  | Poppins _(Google Fonts)_            |
+<br />
 
-## 🛠️ Começar
+## 🛠️ &nbsp;Começar
 
 > Requer **Node.js ≥ 22.12**
 
 ```bash
-# Instalar dependências
-npm install
-
-# Servidor de desenvolvimento → http://localhost:4321
-npm run dev
-
-# Build de produção → ./dist
-npm run build
-
-# Pré-visualizar o build
-npm run preview
+npm install      # instalar dependências
+npm run dev      # dev server → http://localhost:4321
+npm run build    # build de produção → ./dist
+npm run preview  # pré-visualizar o build
 ```
 
-## 📜 Comandos
+<br />
 
-| Comando           | Ação                                     |
-| :---------------- | :--------------------------------------- |
-| `npm install`     | Instala as dependências                  |
-| `npm run dev`     | Servidor local em `localhost:4321`       |
-| `npm run build`   | Compila o site para `./dist/`            |
-| `npm run preview` | Pré-visualiza o build localmente         |
-| `npm run astro`   | CLI do Astro (`astro add`, `astro check`)|
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF8A3D,100:FF4D17&height=3" width="100%" />
-
-## 📂 Estrutura
+## 📂 &nbsp;Estrutura
 
 ```text
 macromath_website/
-├── public/
-│   ├── images/            # Imagens da app, logos e mockups
-│   └── favicon.svg
+├── public/images/      # logos, mockups e imagens da app
 ├── src/
-│   ├── components/        # Secções (Hero, Features, FAQ, ...)
-│   ├── layouts/           # Layout base (head, tema, i18n, scripts)
-│   ├── pages/             # Rotas: index · privacidade · termos
-│   ├── i18n/              # Dicionário de traduções (PT/EN/ES)
-│   └── styles/            # global.css — design tokens & base
-├── scripts/               # Utilitários (geração de mockups)
-├── astro.config.mjs
-└── package.json
+│   ├── components/      # Hero · Features · FAQ · CTA · ...
+│   ├── layouts/         # layout base (head, tema, i18n)
+│   ├── pages/           # index · privacidade · termos
+│   ├── i18n/            # dicionário de traduções (PT/EN/ES)
+│   └── styles/          # global.css — design tokens & base
+├── scripts/             # utilitários (geração de mockups)
+└── astro.config.mjs
 ```
-
-**Secções da página:**
-`Hero` › `TrustBar` › `Features` › `HowItWorks` › `AppShowcase` › `Mission` › `Testimonials` › `FAQ` › `CTA` › `Footer`
-
-## 🌐 Internacionalização
-
-As traduções vivem em [`src/i18n/dict.js`](src/i18n/dict.js). Cada elemento traduzível usa o atributo `data-i18n="chave"`; o idioma é aplicado no cliente, com **persistência em `localStorage`** e **deteção automática** do idioma do browser.
-
-## ☁️ Deploy
-
-O projeto gera um site **100% estático** em `./dist`, pronto para qualquer _host_ estático — **Vercel**, **Netlify**, **Cloudflare Pages** ou **GitHub Pages**.
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF8A3D,100:FF4D17&height=3" width="100%" />
 
 <div align="center">
 
-### 📄 Licença
+`Hero` › `TrustBar` › `Features` › `HowItWorks` › `AppShowcase` › `Mission` › `Testimonials` › `FAQ` › `CTA` › `Footer`
 
-Projeto proprietário © **MacroMath** · Todos os direitos reservados.
+</div>
+
+<br />
+
+## 🌐 &nbsp;Internacionalização
+
+As traduções vivem em [`src/i18n/dict.js`](src/i18n/dict.js). Cada elemento usa `data-i18n="chave"`;
+o idioma é aplicado no cliente, com **persistência** em `localStorage` e **deteção automática** do browser.
+
+<br />
+
+## ☁️ &nbsp;Deploy
+
+Gera um site **100% estático** em `./dist`, pronto para **Vercel**, **Netlify**, **Cloudflare Pages** ou **GitHub Pages**.
+
+<br />
+
+<div align="center">
+
+<sub>📄 &nbsp;Projeto proprietário © **MacroMath** · Todos os direitos reservados</sub>
+
+<br />
 
 <sub>Feito com 🧡 e <strong>Astro</strong></sub>
 
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF8A3D,100:FF4D17&height=110&section=footer" width="100%" />
+<!-- Animated footer wave -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF8A3D,100:FF4D17&height=120&section=footer" width="100%" />
