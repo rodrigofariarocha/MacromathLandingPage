@@ -6,13 +6,10 @@
 
 <br />
 
-<!-- Logo -->
-<img src="public/images/logo-mark.png" alt="MacroMath" width="96" />
+<!-- Animated logo + wordmark (self-contained SVG, gentle pulse) -->
+<img src=".github/assets/macromath-logo.svg" alt="MacroMath" width="420" />
 
 <br /><br />
-
-<!-- Animated wordmark, typed in Poppins -->
-<img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=800&size=42&duration=1600&pause=2500&color=FF5A1F&center=true&vCenter=true&repeat=false&width=480&height=70&lines=MacroMath" alt="MacroMath" />
 
 <!-- Animated rotating taglines, in Poppins -->
 <br />
