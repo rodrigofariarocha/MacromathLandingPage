@@ -7,7 +7,7 @@
 <br />
 
 <!-- Animated logo + wordmark below it (self-contained SVG, gentle pulse) -->
-<img src=".github/assets/macromath-logo.svg" alt="MacroMath" width="300" />
+<img src=".github/assets/macromath-logo.svg" alt="MacroMath" width="210" />
 
 <br /><br />
 
