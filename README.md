@@ -4,42 +4,24 @@
 
 <div align="center">
 
-<br />
-
 <!-- Animated logo + wordmark below it (self-contained SVG, gentle pulse) -->
-<img src=".github/assets/macromath-logo.svg" alt="MacroMath" width="210" />
-
-<br /><br />
-
-<!-- Animated rotating taglines, in Poppins -->
-<img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=500&size=17&duration=2800&pause=900&color=9AA0A6&center=true&vCenter=true&width=560&height=36&lines=Conta+calorias+e+macros+%F0%9F%8D%8E;Planeia+refei%C3%A7%C3%B5es+com+IA+%F0%9F%A4%96;Gere+a+despensa+sem+esfor%C3%A7o+%F0%9F%9B%92;Dispon%C3%ADvel+para+iOS+%26+Android+%F0%9F%93%B1" alt="Taglines" />
-
-<br /><br />
+<img src=".github/assets/macromath-logo.svg" alt="MacroMath" width="200" />
 
 <!-- Minimal badges -->
+<p>
 <img src="https://img.shields.io/badge/Astro-FF5A1F?style=flat-square&logo=astro&logoColor=white" alt="Astro" />
-&nbsp;
 <img src="https://img.shields.io/badge/Poppins-111111?style=flat-square&logo=googlefonts&logoColor=white" alt="Poppins" />
-&nbsp;
 <img src="https://img.shields.io/badge/PT_·_EN_·_ES-FF8A3D?style=flat-square" alt="i18n" />
-&nbsp;
 <img src="https://img.shields.io/badge/Light_·_Dark-111111?style=flat-square" alt="Theme" />
-&nbsp;
 <img src="https://img.shields.io/badge/Status-Online-22C55E?style=flat-square" alt="Status" />
+</p>
 
-<br />
-
-</div>
-
-<!-- ░░ Orange wave divider ░░ -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF8A3D,100:FF4D17&height=70&section=header" width="100%" />
-
-<div align="center">
-
-> **Gestão nutricional inteligente com IA** — conta calorias e macros, planeia refeições,
-> gere a despensa e deixa a inteligência artificial tratar do resto.
+**Gestão nutricional inteligente com IA** — conta calorias e macros, planeia
+refeições, gere a despensa e deixa a inteligência artificial tratar do resto.
 
 </div>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF8A3D,100:FF4D17&height=2" width="100%" />
 
 ## 🧭 &nbsp;Índice
 
