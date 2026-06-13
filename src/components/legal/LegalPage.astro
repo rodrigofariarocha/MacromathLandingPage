@@ -52,7 +52,37 @@ const { titleKey, bodyKey } = Astro.props;
     border-radius: var(--r-full);
     background: var(--brand-gradient);
   }
+  .legal-body :global(h3) {
+    font-size: var(--fs-lg);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: var(--sp-lg) 0 0.5rem;
+  }
   .legal-body :global(p) { color: var(--text-2); line-height: 1.8; margin-bottom: 0.8rem; }
+  .legal-body :global(ul) {
+    list-style: none;
+    margin: 0 0 1rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .legal-body :global(li) {
+    position: relative;
+    padding-left: 1.25rem;
+    color: var(--text-2);
+    line-height: 1.7;
+  }
+  .legal-body :global(li)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 6px;
+    height: 6px;
+    border-radius: var(--r-full);
+    background: var(--brand-gradient);
+  }
   .legal-body :global(a) { color: var(--brand-strong); font-weight: 600; }
   .legal-body :global(a:hover) { text-decoration: underline; }
 </style>

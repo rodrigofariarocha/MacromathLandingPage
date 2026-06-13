@@ -7,7 +7,7 @@
 <br />
 
 <!-- Apple mark -->
-<img src="public/images/logo-mark.png" alt="MacroMath" width="96" />
+<img src="public/images/brand/logo-mark.png" alt="MacroMath" width="96" />
 
 <!-- Orange wordmark, below the mark -->
 <br />

@@ -5,17 +5,16 @@ import fs from 'fs';
 // pixel-aligned iOS status bar (time · Dynamic Island · signal/wifi/battery)
 // using each screen's own background colour so it blends seamlessly.
 
-const RAW = 'public/images/raw';
-const OUT = 'public/images';
+const RAW = 'public/images/screens/raw';
+const OUT = 'public/images/screens';
 const W = 1080;
 const TOP_CROP = 64;   // android status bar
 const BOTTOM_CROP = 66; // android gesture / nav bar
 const BAND = 150;      // baked iOS status bar height
 
 const screens = [
-  'app-home', 'app-ai', 'app-pantry', 'app-progress', 'app-shopping',
-  'app-meal', 'app-diet', 'app-add', 'app-plan', 'app-profile',
-  'app-login', 'app-onboarding',
+  'app-home', 'app-ai', 'app-pantry', 'app-progress',
+  'app-shopping', 'app-meal', 'app-onboarding',
 ];
 
 const DARK = '#1A1B1F';
