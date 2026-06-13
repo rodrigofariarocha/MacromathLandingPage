@@ -1,18 +1,18 @@
 ---
-import StatusBar from './StatusBar.astro';
+import StatusBar from '../ui/StatusBar.astro';
 
 const features = [
-  { t: 'feat.1.t', d: 'feat.1.d', img: '/images/app-home.jpg', icon: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  { t: 'feat.1.t', d: 'feat.1.d', img: '/images/screens/app-home.jpg', icon: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
     tx: 'Macros em tempo real', dx: 'Calorias, proteína, hidratos e gordura visualizados em anéis claros, atualizados a cada refeição.' },
-  { t: 'feat.2.t', d: 'feat.2.d', img: '/images/app-ai.jpg', icon: '<path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6z"/><path d="M18 14l.8 2.2L21 17l-2.2.8L18 20l-.8-2.2L15 17l2.2-.8z"/>',
+  { t: 'feat.2.t', d: 'feat.2.d', img: '/images/screens/app-ai.jpg', icon: '<path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6z"/><path d="M18 14l.8 2.2L21 17l-2.2.8L18 20l-.8-2.2L15 17l2.2-.8z"/>',
     tx: 'MacroAI — assistente nutricional', dx: 'Pergunta qualquer coisa sobre nutrição, gera receitas com o que tens e cria listas de compras inteligentes.' },
-  { t: 'feat.3.t', d: 'feat.3.d', img: '/images/app-pantry.jpg', icon: '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h0M9 12h0"/>',
+  { t: 'feat.3.t', d: 'feat.3.d', img: '/images/screens/app-pantry.jpg', icon: '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h0M9 12h0"/>',
     tx: 'Despensa inteligente', dx: 'Controla o teu stock, lê códigos de barras, digitaliza talões ou identifica alimentos por foto.' },
-  { t: 'feat.4.t', d: 'feat.4.d', img: '/images/app-progress.jpg', icon: '<path d="M3 17l5-5 4 3 6-7"/><path d="M3 21h18"/>',
+  { t: 'feat.4.t', d: 'feat.4.d', img: '/images/screens/app-progress.jpg', icon: '<path d="M3 17l5-5 4 3 6-7"/><path d="M3 21h18"/>',
     tx: 'Evolução e progresso', dx: 'Acompanha o teu peso e macros ao longo do tempo com gráficos elegantes e fáceis de ler.' },
-  { t: 'feat.5.t', d: 'feat.5.d', img: '/images/app-shopping.jpg', icon: '<circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h2l2.5 12.5a2 2 0 0 0 2 1.5h7.5a2 2 0 0 0 2-1.5L21 7H6"/>',
+  { t: 'feat.5.t', d: 'feat.5.d', img: '/images/screens/app-shopping.jpg', icon: '<circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h2l2.5 12.5a2 2 0 0 0 2 1.5h7.5a2 2 0 0 0 2-1.5L21 7H6"/>',
     tx: 'Lista de compras com IA', dx: 'A IA sugere o que comprar com base no teu perfil, objetivos e no que já tens em casa.' },
-  { t: 'feat.6.t', d: 'feat.6.d', img: '/images/app-meal.jpg', icon: '<path d="M12 3c3 3.5 5 6 5 9a5 5 0 0 1-10 0c0-3 2-5.5 5-9z"/>',
+  { t: 'feat.6.t', d: 'feat.6.d', img: '/images/screens/app-meal.jpg', icon: '<path d="M12 3c3 3.5 5 6 5 9a5 5 0 0 1-10 0c0-3 2-5.5 5-9z"/>',
     tx: 'Hidratação e refeições', dx: 'Regista a água do dia e organiza as refeições, do pequeno-almoço ao jantar, sem complicações.' },
 ];
 ---
