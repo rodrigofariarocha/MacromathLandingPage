@@ -5,14 +5,9 @@ import StatusBar from '../ui/StatusBar.astro';
 <section class="hero" id="hero">
   <div class="container hero-grid">
     <div class="hero-copy">
-      <div class="hero-badge reveal">
-        <span class="dot"></span>
-        <span data-i18n="hero.badge">Disponível para iOS &amp; Android</span>
-      </div>
-
       <h1 class="hero-title reveal d1">
         <span data-i18n="hero.title1">A tua nutrição,</span><br />
-        <span class="text-gradient" data-i18n="hero.title2">finalmente sem esforço.</span>
+        <span class="hero-title-accent" data-i18n="hero.title2">finalmente sem esforço.</span>
       </h1>
 
       <p class="hero-sub reveal d2" data-i18n="hero.sub">
@@ -53,10 +48,18 @@ import StatusBar from '../ui/StatusBar.astro';
 
     <div class="hero-visual reveal-s d2">
       <div class="phone-glow"></div>
-      <div class="phone hero-phone">
-        <div class="phone-screen">
-          <img src="/images/screens/app-home.jpg" alt="MacroMath — ecrã principal" loading="eager" />
-          <StatusBar />
+      <div class="phone-duo">
+        <div class="phone phone-back">
+          <div class="phone-screen">
+            <img src="/images/screens/app-progress.jpg" alt="MacroMath — progresso" loading="eager" />
+            <StatusBar />
+          </div>
+        </div>
+        <div class="phone phone-front">
+          <div class="phone-screen">
+            <img src="/images/screens/app-home.jpg" alt="MacroMath — ecrã principal" loading="eager" />
+            <StatusBar />
+          </div>
         </div>
       </div>
     </div>
@@ -66,7 +69,11 @@ import StatusBar from '../ui/StatusBar.astro';
 <style>
   .hero {
     position: relative;
-    padding: clamp(7rem, 14vh, 11rem) 0 var(--sp-4xl);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(6rem, 11vh, 9rem) 0 var(--sp-3xl);
     overflow: hidden;
   }
   .hero-grid {
@@ -77,22 +84,6 @@ import StatusBar from '../ui/StatusBar.astro';
   }
   .hero-copy { max-width: 560px; }
 
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.45rem 0.9rem;
-    border-radius: var(--r-full);
-    background: var(--brand-gradient-soft);
-    border: 1px solid rgba(255, 90, 31, 0.2);
-    color: var(--brand-strong);
-    font-size: var(--fs-xs);
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    margin-bottom: var(--sp-lg);
-  }
-  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--brand); animation: pulse-dot 2.2s ease-in-out infinite; }
-
   .hero-title {
     font-size: var(--fs-5xl);
     font-weight: 800;
@@ -100,6 +91,7 @@ import StatusBar from '../ui/StatusBar.astro';
     letter-spacing: -0.035em;
     margin-bottom: var(--sp-lg);
   }
+  .hero-title-accent { color: var(--brand-soft); }
   .hero-sub {
     font-size: var(--fs-lg);
     color: var(--text-2);
@@ -127,7 +119,32 @@ import StatusBar from '../ui/StatusBar.astro';
     background: radial-gradient(circle, rgba(255, 90, 31, 0.16), transparent 64%);
     filter: blur(36px);
   }
-  .hero-phone { animation: float 6s ease-in-out infinite; }
+
+  /* Two crooked phones, à la Cal AI — fixed-size stage, deterministic placement */
+  .phone-duo {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    height: 540px;
+    margin: 0 auto;
+    animation: float 6s ease-in-out infinite;
+  }
+  .phone-duo .phone {
+    position: absolute;
+    top: 50%;
+    width: 234px;
+  }
+  .phone-front {
+    left: 6%;
+    z-index: 2;
+    transform: translateY(-50%) rotate(-6deg);
+  }
+  .phone-back {
+    right: 6%;
+    z-index: 1;
+    transform: translateY(-50%) rotate(7deg) scale(0.92);
+    filter: brightness(0.95) saturate(0.97);
+  }
 
   @media (max-width: 960px) {
     .hero-grid { grid-template-columns: 1fr; text-align: center; }
@@ -140,5 +157,7 @@ import StatusBar from '../ui/StatusBar.astro';
     .hero-actions .btn { width: 100%; }
     .hero-stats { gap: 0.8rem; }
     .hstat-v { font-size: var(--fs-sm); }
+    .phone-duo { height: 420px; }
+    .phone-duo .phone { width: 178px; }
   }
 </style>

@@ -1,0 +1,220 @@
+---
+const steps = [
+  { n: '01', t: 'how.1.t', d: 'how.1.d' },
+  { n: '02', t: 'how.2.t', d: 'how.2.d' },
+  { n: '03', t: 'how.3.t', d: 'how.3.d' },
+];
+const methods = ['pantry.b1', 'pantry.b2', 'pantry.b3', 'pantry.b4', 'pantry.b5'];
+const bullets = ['ai.b1', 'ai.b2', 'ai.b3'];
+---
+
+<section class="hscroll" id="how">
+  <div class="hscroll-sticky">
+    <div class="hscroll-track">
+
+      <!-- Cena 1 — Como funciona -->
+      <article class="hpanel">
+        <div class="hp-inner">
+          <span class="eyebrow" data-i18n="how.eyebrow">Como funciona</span>
+          <h2 class="title" data-i18n="how.title">Do objetivo ao prato em 3 passos</h2>
+          <div class="hp-steps">
+            {steps.map((s) => (
+              <div class="hp-step">
+                <span class="hp-n">{s.n}</span>
+                <h3 class="hp-st" data-i18n={s.t}></h3>
+                <p class="hp-sd" data-i18n={s.d}></p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </article>
+
+      <!-- Cena 2 — Despensa -->
+      <article class="hpanel hpanel-tint">
+        <div class="hp-inner">
+          <span class="eyebrow" data-i18n="pantry.eyebrow">Despensa</span>
+          <h2 class="title" data-i18n="pantry.title">Sabe sempre o que tens em casa</h2>
+          <p class="lead" data-i18n="pantry.sub">
+            Adiciona alimentos de cinco formas diferentes e nunca mais compres o que já tens.
+          </p>
+          <ul class="hp-pills">
+            {methods.map((k) => (
+              <li class="hp-pill">
+                <span class="hp-check">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                </span>
+                <span data-i18n={k}></span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </article>
+
+      <!-- Cena 3 — MacroAI -->
+      <article class="hpanel">
+        <div class="hp-inner">
+          <span class="eyebrow" data-i18n="ai.eyebrow">Inteligência artificial</span>
+          <h2 class="title" data-i18n="ai.title">O teu nutricionista de bolso</h2>
+          <p class="lead" data-i18n="ai.sub">
+            A MacroAI conhece a tua despensa, os teus objetivos e o teu histórico.
+          </p>
+          <ul class="hp-list">
+            {bullets.map((b) => (
+              <li>
+                <span class="hp-check">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                </span>
+                <span data-i18n={b}></span>
+              </li>
+            ))}
+          </ul>
+          <a href="#download" class="btn btn-primary" data-i18n="hero.cta1">Descarregar grátis</a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="hscroll-dots" aria-hidden="true">
+      <button class="hdot is-active" data-i="0"></button>
+      <button class="hdot" data-i="1"></button>
+      <button class="hdot" data-i="2"></button>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  (function () {
+    const wrap = document.querySelector('.hscroll');
+    const track = document.querySelector('.hscroll-track');
+    if (!wrap || !track) return;
+    const dots = Array.from(document.querySelectorAll('.hdot'));
+    const panels = track.children.length;
+    const mq = window.matchMedia('(max-width: 900px)');
+
+    function maxX() {
+      return track.scrollWidth - document.documentElement.clientWidth;
+    }
+    function scrollRange() {
+      return wrap.offsetHeight - window.innerHeight;
+    }
+    function update() {
+      if (mq.matches) {
+        track.style.transform = '';
+        return;
+      }
+      const top = wrap.getBoundingClientRect().top;
+      const p = Math.min(Math.max(-top / scrollRange(), 0), 1);
+      track.style.transform = 'translate3d(' + -p * maxX() + 'px,0,0)';
+      const active = Math.round(p * (panels - 1));
+      dots.forEach((d, i) => d.classList.toggle('is-active', i === active));
+    }
+
+    dots.forEach((d, i) => d.addEventListener('click', () => {
+      if (mq.matches) return;
+      const target = wrap.offsetTop + (i / (panels - 1)) * scrollRange();
+      window.scrollTo({ top: target, behavior: 'smooth' });
+    }));
+
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+</script>
+
+<style>
+  .hscroll { position: relative; height: 300vh; }
+  .hscroll-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .hscroll-track {
+    display: flex;
+    height: 100vh;
+    will-change: transform;
+  }
+  .hpanel {
+    flex: 0 0 100vw;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: clamp(2rem, 6vw, 5rem);
+  }
+  .hpanel-tint { background: var(--bg-tint); }
+  .hp-inner {
+    width: 100%;
+    max-width: 680px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hp-inner .title { margin: var(--sp-sm) 0 var(--sp-md); }
+  .hp-inner .lead { max-width: 52ch; }
+
+  /* steps */
+  .hp-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.2rem, 3vw, 2.4rem);
+    margin-top: var(--sp-xl);
+    width: 100%;
+    text-align: left;
+  }
+  .hp-step { padding-top: 1.2rem; border-top: 2px solid var(--border); }
+  .hp-step:first-child { border-top-color: var(--brand-strong); }
+  .hp-n { display: block; font-weight: 800; font-size: var(--fs-sm); letter-spacing: 0.04em; color: var(--brand-strong); margin-bottom: 0.6rem; }
+  .hp-st { font-size: var(--fs-lg); font-weight: 700; margin-bottom: 0.3rem; }
+  .hp-sd { font-size: var(--fs-sm); color: var(--text-2); line-height: 1.6; }
+
+  /* pills */
+  .hp-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.7rem; margin-top: var(--sp-xl); }
+  .hp-pill {
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    padding: 0.65rem 1.05rem;
+    border: 1px solid var(--border); border-radius: var(--r-full);
+    background: var(--surface); font-weight: 700; font-size: var(--fs-base);
+  }
+
+  /* bullets */
+  .hp-list { display: flex; flex-direction: column; align-items: flex-start; gap: 0.8rem; margin: var(--sp-xl) 0; }
+  .hp-list li { display: flex; align-items: center; gap: 0.7rem; font-size: var(--fs-base); font-weight: 600; }
+
+  .hp-check {
+    flex-shrink: 0;
+    width: 22px; height: 22px;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    background: var(--brand-gradient); color: #fff;
+  }
+
+  /* dots */
+  .hscroll-dots {
+    position: absolute;
+    bottom: clamp(1.4rem, 4vh, 2.6rem);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.6rem;
+    z-index: 5;
+  }
+  .hdot {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--border-strong); cursor: pointer;
+    transition: background var(--t-base), transform var(--t-base);
+  }
+  .hdot.is-active { background: var(--brand-strong); transform: scale(1.25); }
+
+  /* Mobile: no scroll hijack — stack vertically */
+  @media (max-width: 900px) {
+    .hscroll { height: auto; }
+    .hscroll-sticky { position: static; height: auto; overflow: visible; display: block; }
+    .hscroll-track { flex-direction: column; height: auto; transform: none !important; }
+    .hpanel { flex: none; width: 100%; height: auto; min-height: 70vh; }
+    .hscroll-dots { display: none; }
+  }
+</style>

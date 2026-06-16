@@ -389,6 +389,18 @@ main { position: relative; z-index: 1; }
   }
 }
 
+/* --- Phones: tighter spacing & headlines than the tablet tier --- */
+@media (max-width: 560px) {
+  :root {
+    --fs-4xl: 1.85rem;
+    --fs-3xl: 1.5rem;
+    --fs-2xl: 1.4rem;
+    --sp-4xl: 3.5rem;
+    --sp-3xl: 2.25rem;
+    --sp-2xl: 2.25rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

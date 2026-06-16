@@ -85,4 +85,13 @@ const { titleKey, bodyKey } = Astro.props;
   }
   .legal-body :global(a) { color: var(--brand-strong); font-weight: 600; }
   .legal-body :global(a:hover) { text-decoration: underline; }
+
+  @media (max-width: 560px) {
+    .legal { padding: clamp(5.5rem, 12vh, 7rem) 0 var(--sp-3xl); }
+    .legal-back { margin-bottom: var(--sp-md); }
+    .legal-updated { margin-bottom: var(--sp-xl); }
+    .legal-body :global(p),
+    .legal-body :global(li) { line-height: 1.7; }
+    .legal-body :global(h2) { margin-top: var(--sp-lg); }
+  }
 </style>

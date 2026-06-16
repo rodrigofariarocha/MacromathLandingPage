@@ -212,4 +212,10 @@
     .nav-cta { display: none; }
     .burger { display: flex; }
   }
+  /* Small phones: drop the wordmark so the bar never overflows */
+  @media (max-width: 400px) {
+    .brand-name { display: none; }
+    .nav-actions { gap: 0.45rem; }
+    .lang-trigger { padding: 0 0.65rem; }
+  }
 </style>
