@@ -54,8 +54,8 @@ export const dict = {
   'feat.4.d': { pt: 'Acompanha o teu peso e macros ao longo do tempo com gráficos elegantes e fáceis de ler.', en: 'Follow your weight and macros over time with elegant, easy-to-read charts.', es: 'Sigue tu peso y macros a lo largo del tiempo con gráficos elegantes y fáciles de leer.' },
   'feat.5.t': { pt: 'Lista de compras com IA', en: 'AI shopping list', es: 'Lista de compra con IA' },
   'feat.5.d': { pt: 'A IA sugere o que comprar com base no teu perfil, objetivos e no que já tens em casa.', en: 'AI suggests what to buy based on your profile, goals and what you already have.', es: 'La IA sugiere qué comprar según tu perfil, objetivos y lo que ya tienes en casa.' },
-  'feat.6.t': { pt: 'Hidratação e refeições', en: 'Hydration & meals', es: 'Hidratación y comidas' },
-  'feat.6.d': { pt: 'Regista a água do dia e organiza as refeições, do pequeno-almoço ao jantar, sem complicações.', en: 'Log your daily water and organise meals, from breakfast to dinner, hassle-free.', es: 'Registra el agua del día y organiza las comidas, del desayuno a la cena, sin complicaciones.' },
+  'feat.6.t': { pt: 'Login e sincronização', en: 'Login & sync', es: 'Inicio de sesión y sincronización' },
+  'feat.6.d': { pt: 'Entra com a tua conta e tem os teus dados sincronizados em qualquer dispositivo, em segurança.', en: 'Sign in with your account and keep your data synced across any device, securely.', es: 'Inicia sesión con tu cuenta y mantén tus datos sincronizados en cualquier dispositivo, de forma segura.' },
 
   // --- How it works ---
   'how.eyebrow': { pt: 'Como funciona', en: 'How it works', es: 'Cómo funciona' },
