@@ -15,9 +15,9 @@ export const dict = {
   'hero.title1': { pt: 'A tua nutrição,', en: 'Your nutrition,', es: 'Tu nutrición,' },
   'hero.title2': { pt: 'finalmente sem esforço.', en: 'finally effortless.', es: 'por fin sin esfuerzo.' },
   'hero.sub': {
-    pt: 'Conta macros, planeia refeições, gere a despensa e deixa a inteligência artificial tratar do resto. Tudo numa app simples, rápida e bonita.',
-    en: 'Track macros, plan meals, manage your pantry and let AI handle the rest. All in one app that is simple, fast and beautiful.',
-    es: 'Cuenta macros, planifica comidas, gestiona tu despensa y deja que la IA haga el resto. Todo en una app simple, rápida y bonita.',
+    pt: 'Regista macros, planeia refeições e gere a despensa — com inteligência artificial integrada em cada passo. Uma app simples e poderosa para quem leva a nutrição a sério.',
+    en: 'Track macros, plan meals and manage your pantry — with AI built into every step. A simple yet powerful app for everyone serious about nutrition.',
+    es: 'Registra macros, planifica comidas y gestiona tu despensa — con IA integrada en cada paso. Una app simple y potente para quienes se toman la nutrición en serio.',
   },
   'hero.cta1': { pt: 'Descarregar grátis', en: 'Download free', es: 'Descargar gratis' },
   'hero.cta2': { pt: 'Ver como funciona', en: 'See how it works', es: 'Ver cómo funciona' },
@@ -136,7 +136,6 @@ export const dict = {
   'cta.play': { pt: 'Google Play', en: 'Google Play', es: 'Google Play' },
   'cta.appsub': { pt: 'Descarregar na', en: 'Download on the', es: 'Descargar en la' },
   'cta.playsub': { pt: 'Disponível no', en: 'Get it on', es: 'Disponible en' },
-  'cta.rating': { pt: 'Avaliação 4,9 · iOS & Android', en: 'Rated 4.9 · iOS & Android', es: 'Valoración 4,9 · iOS y Android' },
 
   // --- Footer ---
   'foot.tagline': { pt: 'Gestão nutricional inteligente, para todos.', en: 'Smart nutrition management, for everyone.', es: 'Gestión nutricional inteligente, para todos.' },

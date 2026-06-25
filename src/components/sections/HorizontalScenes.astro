@@ -88,6 +88,7 @@ const bullets = ['ai.b1', 'ai.b2', 'ai.b3'];
     const track = document.querySelector('.hscroll-track');
     if (!wrap || !track) return;
     const dots = Array.from(document.querySelectorAll('.hdot'));
+    const hpSteps = Array.from(document.querySelectorAll('.hp-step'));
     const panels = track.children.length;
     const mq = window.matchMedia('(max-width: 900px)');
 
@@ -100,13 +101,21 @@ const bullets = ['ai.b1', 'ai.b2', 'ai.b3'];
     function update() {
       if (mq.matches) {
         track.style.transform = '';
+        hpSteps.forEach(function(s) { s.classList.add('is-active'); });
         return;
       }
       const top = wrap.getBoundingClientRect().top;
       const p = Math.min(Math.max(-top / scrollRange(), 0), 1);
       track.style.transform = 'translate3d(' + -p * maxX() + 'px,0,0)';
       const active = Math.round(p * (panels - 1));
-      dots.forEach((d, i) => d.classList.toggle('is-active', i === active));
+      dots.forEach(function(d, i) { d.classList.toggle('is-active', i === active); });
+
+      // Progress within panel 1 (0 → 1 as p goes from 0 to 1/(panels-1)).
+      // Each step activates at equal thirds of that range.
+      var panel1p = Math.min(1, p * (panels - 1));
+      hpSteps.forEach(function(step, i) {
+        step.classList.toggle('is-active', panel1p >= i / hpSteps.length);
+      });
     }
 
     dots.forEach((d, i) => d.addEventListener('click', () => {
@@ -165,8 +174,8 @@ const bullets = ['ai.b1', 'ai.b2', 'ai.b3'];
     width: 100%;
     text-align: left;
   }
-  .hp-step { padding-top: 1.2rem; border-top: 2px solid var(--border); }
-  .hp-step:first-child { border-top-color: var(--brand-strong); }
+  .hp-step { padding-top: 1.2rem; border-top: 2px solid var(--border); transition: border-color 0.4s ease; }
+  .hp-step.is-active { border-top-color: var(--brand-strong); }
   .hp-n { display: block; font-weight: 800; font-size: var(--fs-sm); letter-spacing: 0.04em; color: var(--brand-strong); margin-bottom: 0.6rem; }
   .hp-st { font-size: var(--fs-lg); font-weight: 700; margin-bottom: 0.3rem; }
   .hp-sd { font-size: var(--fs-sm); color: var(--text-2); line-height: 1.6; }
