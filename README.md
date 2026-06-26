@@ -67,7 +67,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF8A3D,100:FF4D17&height=2" width="100%" />
 
-## ✨ &nbsp;Overview
+## &nbsp;Overview
 
 **MacroMath Landing Page** is the official website for the **MacroMath** app — a fast, polished and accessible landing page built to showcase the product, explain its features and convert visitors into downloads.
 
@@ -77,7 +77,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF8A3D,100:FF4D17&height=2" width="100%" />
 
-## 🚀 &nbsp;Features
+## &nbsp;Features
 
 | Module | Description |
 | :-- | :-- |
@@ -92,7 +92,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF8A3D,100:FF4D17&height=2" width="100%" />
 
-## 🧱 &nbsp;Stack
+## &nbsp;Stack
 
 <div align="center">
 
@@ -111,7 +111,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF8A3D,100:FF4D17&height=2" width="100%" />
 
-## 🧩 &nbsp;Page Sections
+## &nbsp;Page Sections
 
 > Top-to-bottom order as defined in [`src/pages/index.astro`](src/pages/index.astro):
 
@@ -131,7 +131,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF8A3D,100:FF4D17&height=2" width="100%" />
 
-## 🎨 &nbsp;Design System
+## &nbsp;Design System
 
 > Defined in [`src/styles/global.css`](src/styles/global.css) via CSS custom properties.
 
@@ -156,7 +156,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF8A3D,100:FF4D17&height=2" width="100%" />
 
-## 📁 &nbsp;Structure
+## &nbsp;Structure
 
 ```text
 macromath_website/
@@ -180,7 +180,7 @@ macromath_website/
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF8A3D,100:FF4D17&height=2" width="100%" />
 
-## ⚡ &nbsp;Getting Started
+## &nbsp;Getting Started
 
 **Requirements**
 
@@ -205,7 +205,7 @@ npm run dev          # → http://localhost:4321
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF8A3D,100:FF4D17&height=2" width="100%" />
 
-## 📜 &nbsp;Commands
+## &nbsp;Commands
 
 | Command | Action |
 | :-- | :-- |
@@ -217,7 +217,7 @@ npm run dev          # → http://localhost:4321
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF8A3D,100:FF4D17&height=2" width="100%" />
 
-## 🌐 &nbsp;Internationalization
+## &nbsp;Internationalization
 
 > Three languages: **Portuguese · English · Spanish**, applied client-side.
 
@@ -237,7 +237,7 @@ npm run dev          # → http://localhost:4321
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF8A3D,100:FF4D17&height=2" width="100%" />
 
-## ☁️ &nbsp;Deploy
+## &nbsp;Deploy
 
 `npm run build` produces a **100% static** site in `./dist` — ready for any host:
 
@@ -248,7 +248,7 @@ npm run dev          # → http://localhost:4321
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF8A3D,100:FF4D17&height=2" width="100%" />
 
-## 📄 &nbsp;License
+## &nbsp;License
 
 All rights reserved © Rodrigo Faria Rocha.
 
